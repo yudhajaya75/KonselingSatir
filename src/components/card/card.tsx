@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom';
 import '../card/card.css'
-
 
 const Card = () => {
     return (
@@ -22,7 +22,7 @@ const Card = () => {
                         lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor</p>
                 </div>
                 <div className="btn">
-                    <button className="button">Pesan Sekarang</button>
+                    <button className="button"><Link to="/payment">Pesan Sekarang</Link></button>
                 </div>
             </div>
             <div className="card-container">
@@ -39,7 +39,7 @@ const Card = () => {
                         lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor</p>
                 </div>
                 <div className="btn">
-                    <button className="button">Pesan Sekarang</button>
+                    <button className="button"><Link to="/payment">Pesan Sekarang</Link></button>
                 </div>
             </div>
             <div className="card-container">
@@ -56,7 +56,7 @@ const Card = () => {
                         lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor</p>
                 </div>
                 <div className="btn">
-                    <button className="button">Pesan Sekarang</button>
+                    <button className="button"><Link to="/payment">Pesan Sekarang</Link></button>
                 </div>
             </div>
             <div className="card-container">
@@ -73,7 +73,7 @@ const Card = () => {
                         lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor</p>
                 </div>
                 <div className="btn">
-                    <button className="button">Pesan Sekarang</button>
+                    <button className="button"><Link to="/payment">Pesan Sekarang</Link></button>
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@ const ImageSlider = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots: false,
+                    dots: true,
                 },
             },
         ],
@@ -144,7 +144,7 @@ const ImageSlider = () => {
                             lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor</p>
                     </div>
                     <div className="btn">
-                        <button className="button">Pesan Sekarang</button>
+                        <button className="button"><Link to="/payment">Pesan Sekarang</Link></button>
                     </div>
                 </div>
                 <div className="card-container">
@@ -161,7 +161,7 @@ const ImageSlider = () => {
                             lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor</p>
                     </div>
                     <div className="btn">
-                        <button className="button">Pesan Sekarang</button>
+                        <button className="button"><Link to="/payment">Pesan Sekarang</Link></button>
                     </div>
                 </div>
                 <div className="card-container">
@@ -178,7 +178,7 @@ const ImageSlider = () => {
                             lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor</p>
                     </div>
                     <div className="btn">
-                        <button className="button">Pesan Sekarang</button>
+                        <button className="button"><Link to="/payment">Pesan Sekarang</Link></button>
                     </div>
                 </div>
                 <div className="card-container">
@@ -195,7 +195,7 @@ const ImageSlider = () => {
                             lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor</p>
                     </div>
                     <div className="btn">
-                        <button className="button">Pesan Sekarang</button>
+                        <button className="button"><Link to="/payment">Pesan Sekarang</Link></button>
                     </div>
                 </div>
             </Slider>

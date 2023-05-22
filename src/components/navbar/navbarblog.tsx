@@ -22,12 +22,38 @@ const Navbar = () => {
                 </Link>
             </h1>
             <ul className='listnav'>
-                <Link to="/home"><li className='teksnav'>Home</li></Link>
+                <Link to="/home">
+                    <li className='teksnav' style={{ color: '#4B4B4B' }}>Home</li>
+                </Link>
                 <div>
-                    <Link to='/layanan' className='teksnav1'><li>layanan</li></Link>
+                    <Link to='/layanan' className='teksnav1' style={{ color: '#4B4B4B' }}>
+                        <li>layanan</li> <li style={{ marginLeft: 10 }}>
+                            {isOpen ? (
+                                <AiOutlineCaretDown />
+                            ) : (
+                                <AiOutlineCaretUp />
+                            )}
+                        </li>
+                    </Link>
+                    {isOpen && (
+                        <div className="bg-blue-400 absolute top-20 flex flex-col items-start rounded-lg p-2">
+                            {list.map((item, i) => (
+                                <div className="w-full justify-between text-gray-100 p-4 hover:bg-blue-300 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-white border-l-4" key={i}>
+                                    <Link to='webminar'><h3 className='font-bold'>{item.webminar}</h3></Link>
+                                    <Link to='pelatihan'><h3 className='font-bold'>{item.pelatihan}</h3></Link>
+                                    <Link to='layanan'><h3 className='font-bold'>{item.layanan}</h3></Link>
+                                    <Link to='konsultasi'><h3 className='font-bold'>{item.konsultasi}</h3></Link>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
-                <Link to="/blog"><li className='teksnav2'>Blog</li></Link>
-                <Link to="/about"><li className='teksnav3'>About Us</li></Link>
+                <Link to="/blog">
+                    <li className='teksnav2' style={{ color: '#074288', fontWeight: 'bold', fontSize: '20px' }}>Blog</li>
+                </Link>
+                <Link to="/about">
+                    <li className='teksnav3' style={{ color: '#4B4B4B' }}>About Us</li>
+                </Link>
                 <div style={{ marginTop: 20 }}>
                     <Link to='/login' className='buttonmasuk'>Masuk</Link>
                 </div>

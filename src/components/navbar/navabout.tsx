@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import list from "./listabout.json"
+import list from "./list.json"
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
@@ -22,17 +22,13 @@ const Navbar = () => {
                 </Link>
             </h1>
             <ul className='listnav'>
-                <Link to="/home"><li className='teksnav'>Home</li></Link>
+                <Link to="/home">
+                    <li className='teksnav' style={{ color: '#4B4B4B' }}>Home</li>
+                </Link>
                 <div>
-                    <Link to='/layanan' className='teksnav1'>
+                    <Link to='/layanan' className='teksnav1' style={{ color: '#4B4B4B' }}>
                         <li>layanan</li>
-                    </Link>
-                </div>
-                <Link to="/blog"><li className='teksnav2'>Blog</li></Link>
-                <div>
-                    <Link to="/about" className='teksnav3' onClick={() => setIsOpen((prev) => !prev)}>
-                        <li>About Us</li>
-                        <li style={{ marginLeft: 80, marginTop: -20 }}>
+                        <li style={{ marginLeft: 10 }}>
                             {isOpen ? (
                                 <AiOutlineCaretDown />
                             ) : (
@@ -44,15 +40,22 @@ const Navbar = () => {
                         <div className="bg-blue-400 absolute top-20 flex flex-col items-start rounded-lg p-2">
                             {list.map((item, i) => (
                                 <div className="w-full justify-between text-gray-100 p-4 hover:bg-blue-300 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-white border-l-4" key={i}>
-                                    <Link to='sejarah'><h3 className='font-bold'>{item.sejarah}</h3></Link>
-                                    <Link to='tentang'><h3 className='font-bold'>{item.tentang}</h3></Link>
-                                    <Link to='linimasa'><h3 className='font-bold'>{item.linimasa}</h3></Link>
-                                    <Link to='pendiri'><h3 className='font-bold'>{item.pendiri}</h3></Link>
-                                    <Link to='join'><h3 className='font-bold'>{item.join}</h3></Link>
+                                    <Link to='webminar'><h3 className='font-bold'>{item.webminar}</h3></Link>
+                                    <Link to='pelatihan'><h3 className='font-bold'>{item.pelatihan}</h3></Link>
+                                    <Link to='layanan'><h3 className='font-bold'>{item.layanan}</h3></Link>
+                                    <Link to='konsultasi'><h3 className='font-bold'>{item.konsultasi}</h3></Link>
                                 </div>
                             ))}
                         </div>
                     )}
+                </div>
+                <Link to="/blog">
+                    <li className='teksnav2' style={{ color: '#4B4B4B' }}>Blog</li>
+                </Link>
+                <div>
+                    <Link to="/about" className='teksnav3' style={{ color: '#074288', fontWeight: 'bold', fontSize: '20px' }}>
+                        <li>About Us</li>
+                    </Link>
                 </div>
                 <div style={{ marginTop: 20 }}>
                     <Link to='/login' className='buttonmasuk'>Masuk</Link>
@@ -69,7 +72,9 @@ const Navbar = () => {
                     <Link to="/home"><li className='p-4 border-b'>Home</li></Link>
                     <Link to="/layanan"><li className='p-4 border-b'>Layanan</li></Link>
                     <Link to="/blog"><li className='p-4 border-b'>Blog</li></Link>
-                    <Link to="/about"><li className='p-4 border-b'>About</li></Link>
+                    <Link to="/about">
+                        <li className='p-4 border-b'>About</li>
+                    </Link>
                     <div className='mt-10'>
                         <Link to='/login' className='bg-[#00df9a] hover:bg-[#00c78d] text-white font-bold py-2 px-20 rounded mt-10'>
                             Login

@@ -1,73 +1,81 @@
-import React, { useState } from 'react';
+import { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { Link } from 'react-router-dom';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import '../login/login.css'
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
 
-    const handleSubmit = (event: any) => {
-        event.preventDefault();
-        console.log(`Email: ${email}, Password: ${password}`);
-    };
 
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const handleTogglePassword = () => {
+        setPasswordVisible(!passwordVisible);
+    }
 
     return (
-        <div className='auth-form-container'>
-            <div className='card-form-container'>
-                <form className='login-form' onSubmit={handleSubmit}>
-                    <label htmlFor='email'>Email</label>
-                    <br />
-                    <input
-                        value={email}
-                        className='border'
-                        type='email'
-                        placeholder='Email'
-                        id='email'
-                        name='email'
-                        onChange={(event) => setEmail(event.target.value)}
-                    />
-                    <br />
-                    <br />
-                    <label htmlFor='password'>Password</label>
-                    <br />
-                    <div className='relative'>
-                        <input
-                            value={password}
-                            className='border'
-                            type={showPassword ? 'text' : 'password'}
-                            placeholder='Password'
-                            id='password'
-                            name='password'
-                            onChange={(event) => setPassword(event.target.value)}
-                        />
-                        <span
-                            className='absolute ml-[-20px] top-1/2 transform 
-                            -translate-y-1/2 cursor-pointer opacity-[0.5]'
-                            onClick={togglePasswordVisibility}
-                        >
-                            {showPassword ? <FaEyeSlash /> : <FaEye />}
-                        </span>
-                    </div>
-                    <br />
-                    <button
-                        className='rounded-full bg-blue-700 p-1'
-                        type='submit'
-                        disabled={!email || !password}>
-                        <Link className='p-4 text-white' to='/home'>
-                            Login Now
-                        </Link>
-                    </button>
-                </form>
-                <p className='mt-2'>Don't have an account ? <Link to='/signup'>Sign Up</Link></p>
+        <div className='max-w-[1785px] h-[927px] lg:h-[1117px] mx-auto relative flex flex-col'>
+            <div className='w-full h-full bg-[#010d1f] absolute top-0 -z-20'></div>
+            <img src='http://localhost:3000/images/Frame32.png' className='h-full absolute top-0 -z-10' alt="" />
+            <div className="flex w-[150px] lg:w-[200px] h-[80px] my-10 ml-5 lg:ml-20"  >
+                <img src='http://localhost:3000/images/image-109.webp' alt="logo" className="w-[60px] h-[50px] lg:w-[70px] lg:h-[69px] my-auto mr-3" />
+                <h1 className="text-white text-base lg:text-xl my-auto font-semibold leading-[20px]">Konsultan Satir Indonesia</h1>
             </div>
+
+            {/* form */}
+            <div className=' rounded-md bg-white shadow-2xl  h-[600px] w-[90%] md:w-[70%] lg:w-[40%] lg:h-[500px] mx-auto flex flex-col items-center justify-center gap-10 text-[#5A5A5D] lg:mt-20'>
+                <h2 className='text-3xl font-medium text-black'>Login to your account</h2>
+                <form className="flex flex-col gap-10 lg:w-[70%]">
+                    {/* email */}
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="email" className='font-medium'>Email</label>
+                        <div className='border-2 p-3 rounded-md hover:border-sky-400/[.5] focus:border-sky-400/[.5] '>
+                            <input type="email" id='email' name='email' placeholder='your email' className='outline-0 w-full' />
+                        </div>
+                    </div>
+                    {/* end email */}
+
+                    {/* password */}
+                    <div className='flex flex-col gap-2'>
+                        <div className="flex justify-between">
+                            <label htmlFor="password" className='font-medium' >Password</label>
+                            <a href="#" className="text-[#007DFA] hover:underline underline-offset-1"> Forget Password ?</a>
+                        </div>
+                        <div className="flex items-center lg:justify-between border-2 p-3 rounded-md hover:border-sky-400/[.5] focus:border-sky-400/[.5]">
+                            <input
+                                type={passwordVisible ? 'text' : 'password'}
+                                id="password"
+                                name="password"
+                                placeholder="Your password"
+                                className="outline-0 w-full"
+                            />
+                            <div onClick={handleTogglePassword} className="w-[15px]">
+                                {passwordVisible ? (
+                                    <AiOutlineEyeInvisible size={20} />
+                                ) : (
+                                    <AiOutlineEye size={20} />
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                    {/* end password */}
+                </form>
+                <button className='bg-[#007DFA] lg:w-[70%] text-white w-[270px] 
+                text-center font-medium p-3 rounded-md hover:bg-[#3390ed]'>
+                    <Link to="/home"><p>Login</p></Link></button>
+                <div className="flex gap-2">
+                    <p className="">Don't Have An Account ?</p>
+                    <Link to="/signup" className='text-[#007DFA] hover:underline underline-offset-1'>Sign Up</Link>
+                </div>
+            </div>
+            {/* end form */}
+
+            <div className="text-white text-4xl w-[300px] my-20 ml-5 lg:text-5xl lg:w-[400px] italic font-thin">
+                <h1>
+                    Welcome to. Konseling Satir Indonesia
+                </h1>
+            </div>
+
         </div>
-    );
-};
+    )
+}
 
 export default Login;

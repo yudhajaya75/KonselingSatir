@@ -33,7 +33,7 @@ const footer = () => {
                         <h4 style={{ fontWeight: 'bold', fontSize: '13px' }}>Social media bawahnya</h4>
                         <div className='socialmedia'>
                             <Link to="/"><img src="http://localhost:3000/images/fb.webp" alt="" /></Link>
-                            <p><img src="http://localhost:3000/images/ig.webp" alt="" /></p>
+                            <p><img className='relative bottom-2' src="http://localhost:3000/images/ig.webp" alt="" /></p>
                             <a href=""></a>
                         </div>
                     </div>

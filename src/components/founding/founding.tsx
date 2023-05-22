@@ -61,14 +61,13 @@ const ImageSlider = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-
         responsive: [
             {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots: false,
+                    dots: true,
                 },
             },
             {
@@ -76,7 +75,7 @@ const ImageSlider = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots: false,
+                    dots: true,
                 },
             },
         ],
@@ -88,25 +87,25 @@ const ImageSlider = () => {
             <Slider {...settings}>
                 <div>
                     <img src="./images/CEO.webp" alt="" />
-                    <p className='text-[#002157]'>
+                    <p className='text-[#002157] text-center p-10'>
                         <p className='font-bold'>Fajar Rahardian Siddiq</p> Founder & CEO
                     </p>
                 </div>
                 <div>
                     <img src="./images/CTO.webp" alt="" />
-                    <p className='text-[#002157]'>
+                    <p className='text-[#002157] text-center p-10'>
                         <p className='font-bold'>Maulana Abdullah</p>Co-founder & CTO
                     </p>
                 </div>
                 <div>
                     <img src="./images/psikolog.webp" alt="" />
-                    <p className='text-[#002157]'>
+                    <p className='text-[#002157] text-center p-10'>
                         <p className='font-bold'>Maulana Abdullah</p>Co-founder & CTO
                     </p>
                 </div>
                 <div>
                     <img src="./images/psikolog2.webp" alt="" />
-                    <p className='text-[#002157]'>
+                    <p className='text-[#002157] text-center p-10'>
                         <p className='font-bold'>M Pijar </p>Psikolog Univ. Gajah Mada
                     </p>
                 </div>

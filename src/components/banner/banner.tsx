@@ -3,7 +3,7 @@ import React from 'react';
 const banner = () => {
     return (
         <div className='w-full h-screen'>
-            <img className='top-0 left-0 w-full h-[600px] object-cover' src="./images/banner.webp" alt="" />
+            <img className='top-0 left-0 w-full h-[600px] object-cover' src="http://localhost:3000/images/banner.webp" alt="" />
             <div className='absolute top-3 left-0 w-full h-screen'>
                 <div className='absolute top-3 w-full h-full flex flex-col justify-center text-white'>
                     <div className='md:left-[10%] max-w-[800px] m-auto absolute mt-[200px]'>

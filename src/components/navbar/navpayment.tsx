@@ -9,7 +9,7 @@ const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-
+    console.log("ini Navbar")
     const handleNav = () => {
         setNav(!nav)
     }
@@ -55,15 +55,40 @@ const Navbar = () => {
                 </div>
             </ul>
             <div onClick={handleNav} className='block md:hidden '>
-                {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+                {nav ? <AiOutlineClose size={20} /> :
+                    <AiOutlineMenu size={20} />}
             </div>
             <div className={nav ? 'nav' : 'fixed left-[-100%]'}>
-                <h1 className='w-full text-3xl font-bold text-[#00df9a] mt-3'>
+                <h1 className='w-full text-3xl font-bold mt-3'>
                     <img src="/images/Logo.webp" alt="" />
                 </h1>
                 <ul className='uppercase p-4'>
-                    <Link to="./home"><li className='p-4 border-b'>Home</li></Link>
-                    <Link to="/layanan"><li className='p-4 border-b'>Layanan</li></Link>
+                    <Link to="/home">
+                        <li className='p-4 border-b'>Home</li></Link>
+                    <Link to="/layanan" onClick={() => setIsOpen((prev) => !prev)}>
+                        <li className='p-4 border-b'>Layanan</li>
+                        <li style={{ position: 'relative', left: 210, bottom: 35 }}>
+                            {isOpen ? (
+                                <AiOutlineCaretDown />
+                            ) : (
+                                <AiOutlineCaretUp />
+                            )}
+                        </li>
+                    </Link>
+                    {isOpen && (
+                        <div className="bg-blue-400 absolute top-[220px] left-[-1px] flex flex-col items-start rounded-lg">
+                            {list.map((item, i) => (
+                                <div className="w-full justify-between text-gray-100 
+                                p-4 hover:bg-blue-300 cursor-pointer rounded-r-lg 
+                                border-l-transparent hover:border-l-white border-l-4" key={i}>
+                                    <Link to='webminar'><h3 className='font-bold'>{item.webminar}</h3></Link>
+                                    <Link to='pelatihan'><h3 className='font-bold'>{item.pelatihan}</h3></Link>
+                                    <Link to='layanan'><h3 className='font-bold'>{item.layanan}</h3></Link>
+                                    <Link to='konsultasi'><h3 className='font-bold'>{item.konsultasi}</h3></Link>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                     <Link to="/blog"><li className='p-4 border-b'>Blog</li></Link>
                     <Link to="/about"><li className='p-4 border-b'>About Us</li></Link>
                     <div className='mt-10'>

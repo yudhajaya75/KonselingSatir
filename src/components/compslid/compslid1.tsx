@@ -21,16 +21,18 @@ export default class PauseOnHover extends Component {
                         arrows: false,
                         centerMode: true,
                         centerPadding: "20px",
-                        slidesToShow: 1
+                        slidesToShow: 1,
+                        dots: true
                     }
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 440,
                     settings: {
                         arrows: false,
                         centerMode: true,
                         centerPadding: "20px",
-                        slidesToShow: 1
+                        slidesToShow: 1,
+                        dots: true
                     }
                 }
             ]

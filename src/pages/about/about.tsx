@@ -4,7 +4,7 @@ import Banner from '../../components/banner/bnabout'
 import Teks from '../../components/teks/teksabout'
 import Teks1 from '../../components/teks/teksabout1'
 import Card from '../../components/card/cardabout'
-import Teks3 from '../../components/teks3/teksabout'
+import Teks2 from '../../components/teks/teksabout-pendiri'
 import Founding from '../../components/founding/founding'
 import Footer from '../../components/footer/footabout'
 
@@ -17,7 +17,7 @@ const about = () => {
             <Teks />
             <Teks1 />
             <Card />
-            <Teks3 />
+            <Teks2 />
             <Founding />
             <Footer />
         </div>
