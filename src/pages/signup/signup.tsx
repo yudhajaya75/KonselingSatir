@@ -63,7 +63,7 @@ const Register = () => {
                     <Link to="/login"><p>Create Account</p></Link></button>
                 <div className='bg-[#E0EFFE] text-[#007DFA]  lg:w-[70%] w-[270px] text-center font-medium p-3 rounded-md flex items-center justify-center gap-2'>
                     <FcGoogle size={20} />
-                    <a href="#"> Continue with Google</a>
+                    <a href="https://accounts.google.com/v3/signin/identifier?dsh=S1711984254%3A1685105324919094&authuser=0&ec=GAlAywI&hl=en&flowName=GlifWebSignIn&flowEntry=AddSession"> Continue with Google</a>
                 </div>
                 <div className="flex gap-2">
                     <p className="">Already Have An Account ?</p>

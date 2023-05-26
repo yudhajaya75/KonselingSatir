@@ -34,7 +34,7 @@ const Mobile = () => {
     return (
         <>
             <div className='text-[15px] relative left-[180px] top-[50px]'>
-                <Link className='text-[#002157] font-bold relative left-[-150px]' to="/blog">&lt; Back</Link>
+                <Link className='text-[#002157] font-bold relative left-[-150px] z-10' to="/blog">&lt; Back</Link>
                 <p className='relative top-1 font-bold left-[-150px] text-[20px] text-[#002157]'>Berita Terbaru</p>
             </div>
         </>
