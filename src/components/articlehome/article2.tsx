@@ -137,4 +137,4 @@ const ImageSlider = () => {
 
 
 
-export default Articel;
+export default Founding;

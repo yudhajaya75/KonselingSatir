@@ -31,7 +31,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <button className="button-webminar">Lihat Detail</button>
+                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -56,7 +56,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <button className="button-webminar">Lihat Detail</button>
+                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -81,7 +81,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <button className="button-webminar">Lihat Detail</button>
+                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -106,7 +106,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <button className="button-webminar">Lihat Detail</button>
+                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -131,7 +131,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <button className="button-webminar">Lihat Detail</button>
+                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -156,7 +156,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <button className="button-webminar">Lihat Detail</button>
+                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -181,7 +181,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <button className="button-webminar">Lihat Detail</button>
+                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -206,7 +206,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <button className="button-webminar">Lihat Detail</button>
+                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
                     </div>
                 </div>
             </div>

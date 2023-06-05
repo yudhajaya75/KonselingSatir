@@ -106,7 +106,6 @@ const ImageSlider = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-
         responsive: [
             {
                 breakpoint: 768,

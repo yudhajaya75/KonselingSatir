@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/navbar/navwebminar'
+import Navbar from '../../components/navbar/navbar'
 import Banner from '../../components/banner/banwebminar'
 import Teks from '../../components/teks/teks-webminar'
 import Teks2 from '../../components/teks/teks-webminar1'
@@ -8,7 +8,7 @@ import Teks3 from '../../components/teks/teks-webminar2'
 import Footer from '../../components/footer/footwebminar'
 
 
-const webminar = () => {
+const webinar = () => {
     return (
         <>
             <Navbar />
@@ -22,4 +22,4 @@ const webminar = () => {
     )
 }
 
-export default webminar
+export default webinar

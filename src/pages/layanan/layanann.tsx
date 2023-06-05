@@ -1,5 +1,5 @@
 import 'react-multi-carousel/lib/styles.css';
-import Navbar from '../../components/navbar/navlayanan'
+import Navbar from '../../components/navbar/navbar'
 import Banner from '../../components/banner/banlayanan'
 import Teks from '../../components/teks/teks';
 import Card from '../../components/card/card';

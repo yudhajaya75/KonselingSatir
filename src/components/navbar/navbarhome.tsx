@@ -9,7 +9,7 @@ const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-
+    console.log("ini Navbar")
     const handleNav = () => {
         setNav(!nav)
     }
@@ -17,16 +17,17 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <h1 className='logo'>
-                <Link to="./home">
+                <Link to="/home">
                     <img src="http://localhost:3000/images/Logo.webp" alt="" />
                 </Link>
             </h1>
             <ul className='listnav'>
                 <Link to="/home">
-                    <li className='teksnav' style={{ color: '#074288', fontWeight: 'bold', fontSize: '20px' }}>Home</li>
+                    <li className='teksnav' style={{ color: '#074288' }}>Home</li>
                 </Link>
                 <div>
-                    <Link to='/layanan' className='teksnav1' style={{ color: '#4B4B4B' }}>
+                    <Link to='/layanan' onClick={() => setIsOpen((prev) => !prev)}
+                        className='teksnav1' style={{ color: '#4B4B4B', fontWeight: 'bold', fontSize: '20px' }}>
                         <li>layanan</li>
                         <li style={{ marginLeft: 10 }}>
                             {isOpen ? (
@@ -40,7 +41,7 @@ const Navbar = () => {
                         <div className="bg-blue-400 absolute top-20 flex flex-col items-start rounded-lg p-2">
                             {list.map((item, i) => (
                                 <div className="w-full justify-between text-gray-100 p-4 hover:bg-blue-300 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-white border-l-4" key={i}>
-                                    <Link to='webminar'><h3 className='font-bold'>{item.webminar}</h3></Link>
+                                    <Link to='webinar'><h3 className='font-bold'>{item.webinar}</h3></Link>
                                     <Link to='pelatihan'><h3 className='font-bold'>{item.pelatihan}</h3></Link>
                                     <Link to='layanan'><h3 className='font-bold'>{item.layanan}</h3></Link>
                                     <Link to='konsultasi'><h3 className='font-bold'>{item.konsultasi}</h3></Link>
@@ -49,30 +50,56 @@ const Navbar = () => {
                         </div>
                     )}
                 </div>
-                <Link to="/blog"><li className='teksnav2' style={{ color: '#4B4B4B' }}>Blog</li></Link>
-                <div>
-                    <Link to="/about" className='teksnav3' style={{ color: '#4B4B4B' }}>
-                        <li>About Us</li>
-                    </Link>
-                </div>
+                <Link to="/blog">
+                    <li className='teksnav2' style={{ color: '#4B4B4B' }}>Blog</li>
+                </Link>
+                <Link to="/about">
+                    <li className='teksnav3' style={{ color: '#4B4B4B' }}>About Us</li>
+                </Link>
                 <div style={{ marginTop: 20 }}>
                     <Link to='/login' className='buttonmasuk'>Masuk</Link>
                 </div>
             </ul>
             <div onClick={handleNav} className='block md:hidden '>
-                {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+                {nav ? <AiOutlineClose size={20} /> :
+                    <AiOutlineMenu size={20} />}
             </div>
             <div className={nav ? 'nav' : 'fixed left-[-100%]'}>
-                <h1 className='w-full text-3xl font-bold text-[#00df9a] mt-3'>
+                <h1 className='w-full text-3xl font-bold mt-3'>
                     <img src="/images/Logo.webp" alt="" />
                 </h1>
                 <ul className='uppercase p-4'>
-                    <Link to="/home"><li className='p-4 border-b'>Home</li></Link>
-                    <Link to="/layanan"><li className='p-4 border-b'>Layanan</li></Link>
+                    <Link to="/home">
+                        <li className='p-4 border-b'>Home</li></Link>
+                    <Link to="/layanan" onClick={() => setIsOpen((prev) => !prev)}>
+                        <li className='p-4 border-b'>Layanan</li>
+                        <li style={{ position: 'relative', left: 210, bottom: 35 }}>
+                            {isOpen ? (
+                                <AiOutlineCaretDown />
+                            ) : (
+                                <AiOutlineCaretUp />
+                            )}
+                        </li>
+                    </Link>
+                    {isOpen && (
+                        <div className="bg-blue-400 absolute top-[220px] left-[-1px] flex flex-col items-start rounded-lg">
+                            {list.map((item, i) => (
+                                <div className="w-full justify-between text-gray-100 
+                                p-4 hover:bg-blue-300 cursor-pointer rounded-r-lg 
+                                border-l-transparent hover:border-l-white border-l-4" key={i}>
+                                    <Link to='webinar'><h3 className='font-bold'>{item.webinar}</h3></Link>
+                                    <Link to='pelatihan'><h3 className='font-bold'>{item.pelatihan}</h3></Link>
+                                    <Link to='layanan'><h3 className='font-bold'>{item.layanan}</h3></Link>
+                                    <Link to='konsultasi'><h3 className='font-bold'>{item.konsultasi}</h3></Link>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                     <Link to="/blog"><li className='p-4 border-b'>Blog</li></Link>
-                    <Link to="/about"><li className='p-4 border-b'>About</li></Link>
+                    <Link to="/about"><li className='p-4 border-b'>About Us</li></Link>
                     <div className='mt-10'>
-                        <Link to='/login' className='bg-[#00df9a] hover:bg-[#00c78d] text-white font-bold py-2 px-20 rounded mt-10'>
+                        <Link to='/login' className='bg-[#00df9a] hover:bg-[#00c78d]
+                         text-white font-bold py-2 px-20 rounded'>
                             Login
                         </Link>
                     </div>

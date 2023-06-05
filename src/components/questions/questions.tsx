@@ -1,41 +1,205 @@
-import React from 'react';
-import { FiChevronDown } from "react-icons/fi";
+import React, { useState, useEffect } from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const Question = () => {
+const Founding = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    return windowWidth <= 440 ? <Mobile /> : <SimpleAccordion />;
+};
+
+
+const SimpleAccordion = () => {
     return (
-        <section>
-            <div className="flex justify-center p-4 2xl:p-0 mt-[100px]">
-                <h2 className="text-3xl mb-10  font-semibold text-[#002157] mt-[15px] lg:mr-[100px] lg:ml-[150px]">FAG</h2>
-                <div className=" w-[1381px] ml-2 rounded-[10px] bg-[#F8FCFF]">
-                    <div className="flex text-xl justify-between pt-[5px] mt-[10px] ">
-                        <p className="ml-[60px]">Pertanyaan 1</p>
-                        <FiChevronDown className="mr-[50px] text-3xl " />
-                    </div>
-                    <div className=' border-b-2 border-zinc-200 mt-[10px]'></div>
-                    <div className="flex text-xl justify-between pt-[5px] mt-[10px] ">
-                        <p className="ml-[60px]">Pertanyaan 2</p>
-                        <FiChevronDown className="mr-[50px] text-3xl" />
-                    </div>
-                    <div className=' border-b-2 border-zinc-200 mt-[10px]'></div>
-                    <div className="flex text-xl justify-between pt-[5px] mt-[10px] ">
-                        <p className="ml-[60px]">Pertanyaan 3</p>
-                        <FiChevronDown className="mr-[50px] text-3xl " />
-                    </div>
-                    <div className=' border-b-2 border-zinc-200 mt-[10px]'></div>
-                    <div className="flex text-xl justify-between pt-[5px] mt-[10px] ">
-                        <p className="ml-[60px]">Pertanyaan 4</p>
-                        <FiChevronDown className="mr-[50px] text-3xl" />
-                    </div>
-                    <div className=' border-b-2 border-zinc-200 mt-[10px] '></div>
-                    <div className="flex text-xl justify-between pt-[5px] mt-[10px] pb-[10px]">
-                        <p className="ml-[60px]">Pertanyaan 5</p>
-                        <FiChevronDown className="mr-[50px] text-3xl" />
-                    </div>
-                </div>
+        <div className='relative left-[120px]'>
+            <p className='relative top-[90px] left-20 font-bold text-[#002157] text-[30px]'>FAQ</p>
+            <div className='pl-[200px] pr-[200px] pb-[100px] pt-[50px]'>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography>Pertanyaan 1</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography>Pertanyaan 2</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography>Pertanyaan 3</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography>Pertanyaan 4</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography>Pertanyaan 5</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
             </div>
-        </section>
-    )
+            {/* <Accordion disabled>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel3a-content"
+                    id="panel3a-header"
+                >
+                    <Typography>Disabled Accordion</Typography>
+                </AccordionSummary>
+            </Accordion> */}
+        </div>
+    );
 }
 
-
-export default Question;
+const Mobile = () => {
+    return (
+        <div className='relative right-[60px]'>
+            <p className='relative top-[90px] left-20 font-bold text-[#002157] text-[30px]'>FAQ</p>
+            <div className='relative left-10 pl-[120px] pb-[100px] pt-[50px]'>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography>Pertanyaan 1</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography>Pertanyaan 2</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography>Pertanyaan 3</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography>Pertanyaan 4</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ backgroundColor: '#F8FCFF' }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography>Pertanyaan 5</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+            </div>
+        </div>
+    );
+}
+export default Founding;

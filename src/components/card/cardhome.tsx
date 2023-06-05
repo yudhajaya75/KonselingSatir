@@ -84,6 +84,18 @@ const ImageSlider = () => {
         ],
     };
 
+    const sliderRef = React.useRef<Slider>(null);
+    const goToPrevSlide = () => {
+        if (sliderRef.current) {
+            sliderRef.current.slickPrev();
+        }
+    };
+    const goToNextSlide = () => {
+        if (sliderRef.current) {
+            sliderRef.current.slickNext();
+        }
+    };
+
     return (
         <div>
             <div className="p-4 w-[400px] text-center mx-auto">
@@ -131,8 +143,12 @@ const ImageSlider = () => {
 
             </Slider>
             <div className="flex top-[120%] left-3 w-[95%] justify-between absolute md:hidden text-[#002157]">
-                <SlArrowLeft size={23} />
-                <SlArrowRight size={23} />
+                <button onClick={goToPrevSlide}>
+                    <SlArrowLeft size={23} />
+                </button>
+                <button onClick={goToNextSlide}>
+                    <SlArrowRight size={23} />
+                </button>
             </div>
         </div>
     );

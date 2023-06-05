@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/navbar/navkonsul'
+import Navbar from '../../components/navbar/navbar'
 import Banner from '../../components/banner/banpelatihan'
 import Teks from '../../components/teks/teks-pelatihan'
 import Card from '../../components/card/card'

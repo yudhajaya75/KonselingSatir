@@ -14,9 +14,9 @@ const Cards = () => {
                     <div className='cardbd'>
                         <img className='card-img' src='./images/webminar.webp' alt='logo' />
                         <div className='card-body'>
-                            <h3 className='card-title'>Webminar</h3>
+                            <h3 className='card-title'>Webinar</h3>
                             <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.asdasdas</p>
-                            <Link to='/layanan/webminar'>
+                            <Link to='/layanan/webinar'>
                                 <button className='card-cta'>Lihat Selengkapnya</button>
                             </Link>
                         </div>
@@ -122,7 +122,7 @@ const ImageSlider = () => {
                     <div className='border border-gray-300 rounded-lg'>
                         <img className='h-[300px] w-[410px]' src='./images/webminar.webp' alt='logo' />
                         <div className='card-body'>
-                            <h3 className='relative bottom-2 text-center font-bold text-xl'>Webminar</h3>
+                            <h3 className='relative bottom-2 text-center font-bold text-xl'>Webinar</h3>
                             <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <Link to='/layanan/webminar'>
                                 <div className='flex items-center justify-center'>

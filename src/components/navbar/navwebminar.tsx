@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <h1 className='logo'>
-                <Link to="./home">
+                <Link to="/home">
                     <img src="http://localhost:3000/images/Logo.webp" alt="" />
                 </Link>
             </h1>
@@ -39,7 +39,7 @@ const Navbar = () => {
                         <div className="bg-blue-400 absolute top-20 flex flex-col items-start rounded-lg p-2">
                             {list.map((item, i) => (
                                 <div className="w-full justify-between text-gray-100 p-4 hover:bg-blue-300 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-white border-l-4" key={i}>
-                                    <Link to='webminar'><h3 className='font-bold'>{item.webminar}</h3></Link>
+                                    <Link to='webinar'><h3 className='font-bold'>{item.webinar}</h3></Link>
                                     <Link to='pelatihan'><h3 className='font-bold'>{item.pelatihan}</h3></Link>
                                     <Link to='layanan'><h3 className='font-bold'>{item.layanan}</h3></Link>
                                     <Link to='konsultasi'><h3 className='font-bold'>{item.konsultasi}</h3></Link>

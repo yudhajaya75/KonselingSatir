@@ -4,7 +4,6 @@ import Banner from '../../components/banner/bnhome'
 import Content from '../../components/content/content'
 import Card from '../../components/card/cardhome'
 import Icons from '../../components/iconshome/iconshome'
-import Article from '../../components/articlehome/articlehome'
 import Sosmed from '../../components/sosmed/sosmed'
 import Intro from '../../components/intro/introhome'
 import Article2 from '../../components/articlehome/article2'
@@ -19,7 +18,6 @@ const home = () => {
             <Content />
             <Card />
             <Icons />
-            <Article />
             <Sosmed />
             <Intro />
             <Article2 />
