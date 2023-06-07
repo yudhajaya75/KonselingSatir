@@ -16,9 +16,9 @@ const Cards = () => {
                         <div className='card-body'>
                             <h3 className='card-title'>Webinar</h3>
                             <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.asdasdas</p>
-                            <Link to='/layanan/webinar'>
+                            <a href='/webinar'>
                                 <button className='card-cta'>Lihat Selengkapnya</button>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -30,9 +30,9 @@ const Cards = () => {
                         <div className='card-body'>
                             <h3 className='card-title'>Layanan konseling individu pasangan & keluarga</h3>
                             <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.asdasdas</p>
-                            <Link to='/layanan'>
+                            <a href='/layanan'>
                                 <button className='card-cta'>Lihat Selengkapnya</button>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -44,9 +44,9 @@ const Cards = () => {
                         <div className='card-body'>
                             <h3 className='card-title'>Pelatihan</h3>
                             <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.asdasdas</p>
-                            <Link to='/layanan/pelatihan'>
+                            <a href='/pelatihan'>
                                 <button className='card-cta'>Lihat Selengkapnya</button>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -58,9 +58,9 @@ const Cards = () => {
                         <div className='card-body'>
                             <h3 className='card-title'>Konsultasi</h3>
                             <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.asdasdas</p>
-                            <Link to='/layanan/konsultasi'>
+                            <a href='/konsultasi'>
                                 <button className='card-cta'>Lihat Selengkapnya</button>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

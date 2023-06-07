@@ -1,9 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
-import { FcGoogle } from "react-icons/fc"
 import { Link } from 'react-router-dom';
+import jwtDecode from "jwt-decode";
 
 const Register = () => {
+    interface userI {
+        name: string | null;
+        iat?: number;
+        iss?: string;
+        picture?: string;
+    }
+
+    const [user, setUser] = useState<userI>({ name: null })
+
+    function handleCallBackResponse(response: any) {
+        const userObject = jwtDecode(response.credential);
+
+        setUser(userObject as userI);
+        document.getElementById("signInDiv")!.hidden = true;
+    }
+
+    function handleSignout() {
+        setUser({ name: null });
+        document.getElementById("signOutDiv")!.hidden = false;
+    }
+
+    useEffect(() => {
+        // global google
+        google.accounts!.id.initialize({
+            client_id: "548038563275-chirhiki2t042op8amukfe0df1hkb8r6.apps.googleusercontent.com",
+            callback: handleCallBackResponse
+        });
+        const docGetId = document.getElementById("signInDiv")!;
+        google.accounts.id.renderButton(docGetId, {
+            theme: "outline",
+            size: "large",
+            type: "standard"
+        })
+
+        google.accounts.id.prompt();
+    })
 
     const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -60,14 +96,15 @@ const Register = () => {
                 </form>
                 <button className='bg-[#007DFA] lg:w-[70%] text-white w-[270px] 
                 text-center font-medium p-3 rounded-md hover:bg-[#3390ed]'>
-                    <Link to="/login"><p>Create Account</p></Link></button>
-                <div className='bg-[#E0EFFE] text-[#007DFA]  lg:w-[70%] w-[270px] text-center font-medium p-3 rounded-md flex items-center justify-center gap-2'>
-                    <FcGoogle size={20} />
-                    <a href="https://accounts.google.com/v3/signin/identifier?dsh=S1711984254%3A1685105324919094&authuser=0&ec=GAlAywI&hl=en&flowName=GlifWebSignIn&flowEntry=AddSession"> Continue with Google</a>
+                    <a href="/login"><p>Create Account</p></a></button>
+                <div id="signInDiv" className='bg-[#E0EFFE] text-[#007DFA]  lg:w-[70%] w-[270px] text-center 
+                font-medium p-3 rounded-md flex items-center justify-center gap-2'>
+                    <button type="button" className="cursor-pointer bg-blue-200" onClick={handleSignout}>
+                    </button>
                 </div>
                 <div className="flex gap-2">
                     <p className="">Already Have An Account ?</p>
-                    <Link to="/login" className='text-[#007DFA] hover:underline underline-offset-1'>Log in</Link>
+                    <a href="/login" className='text-[#007DFA] hover:underline underline-offset-1'>Log in</a>
                 </div>
             </div>
             {/* end form */}

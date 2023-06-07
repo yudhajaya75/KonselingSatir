@@ -20,7 +20,7 @@
   .videoWrapper object,
   .videoWrapper embed {
     position: absolute;
-    top: 0px;
+    top: 50px;
     left: 0;
     width: 100%;
     height: 100%;

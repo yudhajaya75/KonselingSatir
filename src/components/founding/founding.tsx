@@ -4,9 +4,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../founding/slider.css'
 
-const Boxing = () => {
+const Team = () => {
     return (
-        <>
+        <div className=''>
             <div className='w-[220px] mt-20'>
                 <img className='ml-[40px]' src='./images/CEO.webp' alt='' />
                 <p className='ml-[40px] text-[#002157]'>
@@ -31,7 +31,7 @@ const Boxing = () => {
                     <p className='font-bold'>M Pijar </p>Psikolog Univ. Gajah Mada
                 </p>
             </div>
-        </>
+        </div>
     );
 };
 
@@ -50,10 +50,10 @@ const Founding = () => {
         };
     }, []);
 
-    return windowWidth <= 440 ? <ImageSlider /> : <Boxing />;
+    return windowWidth <= 440 ? <Mobile /> : <Team />;
 };
 
-const ImageSlider = () => {
+const Mobile = () => {
     const settings = {
         dots: true,
         infinite: true,

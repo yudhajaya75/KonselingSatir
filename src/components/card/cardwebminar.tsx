@@ -31,7 +31,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
+                        <a href="/webinar2"><button className="button-webminar">Lihat Detail</button></a>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -56,7 +56,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
+                        <a href="/webinar2"><button className="button-webminar">Lihat Detail</button></a>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -81,7 +81,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
+                        <a href="/webinar2"><button className="button-webminar">Lihat Detail</button></a>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -106,7 +106,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
+                        <a href="/webinar2"><button className="button-webminar">Lihat Detail</button></a>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -131,7 +131,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
+                        <a href="/webinar3"><button className="button-webminar">Lihat Detail</button></a>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -156,7 +156,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
+                        <a href="/webinar3"><button className="button-webminar">Lihat Detail</button></a>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -181,7 +181,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
+                        <a href="/webinar3"><button className="button-webminar">Lihat Detail</button></a>
                     </div>
                 </div>
                 <div className="card-webminar">
@@ -206,7 +206,7 @@ const Card = () => {
                         </p>
                     </div>
                     <div className="btn-webminar">
-                        <Link to="/webinar2"><button className="button-webminar">Lihat Detail</button></Link>
+                        <a href="/webinar3"><button className="button-webminar">Lihat Detail</button></a>
                     </div>
                 </div>
             </div>
@@ -289,7 +289,7 @@ const ImageSlider = () => {
                             </p>
                         </div>
                         <div className="btn-webminar">
-                            <button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button>
+                            <a href="/webinar2"><button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button></a>
                         </div>
                     </div>
                 </div>
@@ -316,7 +316,7 @@ const ImageSlider = () => {
                             </p>
                         </div>
                         <div className="btn-webminar">
-                            <button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button>
+                            <a href="/webinar2"><button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button></a>
                         </div>
                     </div>
                 </div>
@@ -343,7 +343,7 @@ const ImageSlider = () => {
                             </p>
                         </div>
                         <div className="btn-webminar">
-                            <button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button>
+                            <a href="/webinar2"><button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button></a>
                         </div>
                     </div>
                 </div>
@@ -370,7 +370,7 @@ const ImageSlider = () => {
                             </p>
                         </div>
                         <div className="btn-webminar">
-                            <button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button>
+                            <a href="/webinar2"><button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button></a>
                         </div>
                     </div>
                 </div>
@@ -397,7 +397,7 @@ const ImageSlider = () => {
                             </p>
                         </div>
                         <div className="btn-webminar">
-                            <button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button>
+                            <a href="/webinar3"><button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button></a>
                         </div>
                     </div>
                 </div>
@@ -424,7 +424,7 @@ const ImageSlider = () => {
                             </p>
                         </div>
                         <div className="btn-webminar">
-                            <button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button>
+                            <a href="/webinar3"><button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button></a>
                         </div>
                     </div>
                 </div>
@@ -451,7 +451,7 @@ const ImageSlider = () => {
                             </p>
                         </div>
                         <div className="btn-webminar">
-                            <button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button>
+                            <a href="/webinar3"><button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button></a>
                         </div>
                     </div>
                 </div>
@@ -478,7 +478,7 @@ const ImageSlider = () => {
                             </p>
                         </div>
                         <div className="btn-webminar">
-                            <button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button>
+                            <a href="/webinar3"><button className="bg-blue-800 text-white font-bold px-10 py-2 rounded-lg">Lihat Detail</button></a>
                         </div>
                     </div>
                 </div>

@@ -38,6 +38,6 @@
     }
 
     .buttonmasuk {
-      @apply bg-[#002157] hover:bg-[#00c78d] text-white font-bold py-4 px-10 ml-[200px] rounded
+      @apply bg-[#002157] hover:bg-[#286cdb] text-white font-bold py-4 px-10 ml-[200px] rounded
     }
   }

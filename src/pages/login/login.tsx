@@ -60,10 +60,10 @@ const Login = () => {
                 </form>
                 <button className='bg-[#007DFA] lg:w-[70%] text-white w-[270px] 
                 text-center font-medium p-3 rounded-md hover:bg-[#3390ed]'>
-                    <Link to="/home"><p>Login</p></Link></button>
+                    <a href="/home"><p>Login</p></a></button>
                 <div className="flex gap-2">
                     <p className="">Don't Have An Account ?</p>
-                    <Link to="/signup" className='text-[#007DFA] hover:underline underline-offset-1'>Sign Up</Link>
+                    <a href="/signup" className='text-[#007DFA] hover:underline underline-offset-1'>Sign Up</a>
                 </div>
             </div>
             {/* end form */}

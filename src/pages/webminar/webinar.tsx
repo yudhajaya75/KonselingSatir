@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/navbar/navbar'
+import Navbar from '../../components/navbar/navwebinar'
 import Banner from '../../components/banner/banwebminar'
 import Teks from '../../components/teks/teks-webminar'
 import Teks2 from '../../components/teks/teks-webminar1'
