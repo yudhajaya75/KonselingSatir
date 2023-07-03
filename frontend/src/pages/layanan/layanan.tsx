@@ -9,11 +9,10 @@ import Teks3 from '../../components/teks/teks-kerjasama';
 import Compslid from '../../components/compslid/compslid';
 import Footer from '../../components/footer/footer';
 
-
-function layanan() {
+const layanan = (props: { email: string }) => {
   return (
     <div className='mx-auto max-w-[1910px] relative'>
-      <Navbar />
+      <Navbar accountEmail={props.email} />
       <Banner />
       <Teks />
       <Card />

@@ -1,15 +1,79 @@
 import React, { useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
 import list from "./list.json"
+import listprofile from "./listprofile.json"
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import './navbarhome.css'
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false)
+const Navbar = ({ accountEmail }: { accountEmail: string }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isOpenUp, setIsOpenUp] = useState(false);
+    const toggleMenu = () => {
+        setIsOpenUp((prev) => !prev);
+    };
+
     const [nav, setNav] = useState(false)
 
     const handleNav = () => {
         setNav(!nav)
+    }
+
+    const profile = [
+        { myprofile: 'My Profile', logout: 'Log out' },
+    ];
+
+    const logout = async () => {
+        await fetch('http://localhost:8000/api/logout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+        });
+    }
+
+    let menu: JSX.Element;
+
+    if (accountEmail === '') {
+        menu = (
+            <div>
+                <div style={{ marginTop: 20 }}>
+                    <a href="/login" className="buttonmasuk">
+                        Masuk
+                    </a>
+                </div>
+            </div>
+        );
+    } else {
+
+        menu = (
+            <div className="relative inline-block text-left">
+                <a
+                    href="#"
+                    onClick={toggleMenu}
+                    className="teksnav1"
+                    style={{ color: '#4B4B4B', fontWeight: 'bold', fontSize: '20px' }}
+                >
+                    {/* <img src="./images/profile.png" alt="" /> */}
+                    <li>{accountEmail}</li>
+                    <li style={{ marginLeft: 10 }}>{isOpenUp ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}</li>
+                </a>
+                {isOpenUp && (
+                    <div className="bg-[#FFFFFF] absolute ml-12 top-20 flex flex-col items-start rounded-lg p-2">
+                        {listprofile.map((item, i) => (
+                            <div className="w-[239px] justify-between text-[#074288] p-4 
+                            hover:bg-blue-300 cursor-pointer rounded-lg border-l-transparent 
+                            hover:border-l-white"
+                                key={i}
+                            >
+                                <Link to='/myprofile'><h3 className='font-bold'>{item.myprofile}</h3></Link>
+                                <Link to='/login' onClick={logout}><h3 className='font-bold'>{item.logout}</h3></Link>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        );
     }
 
     return (
@@ -21,7 +85,7 @@ const Navbar = () => {
             </h1>
             <ul className='listnav'>
                 <a href="/home">
-                    <li className='teksnav' style={{ color: '#4B4B4B' }}>Home</li>
+                    <li className='teksnav' style={{ color: '#074288' }}>Home</li>
                 </a>
                 <div>
                     <a href='#' onClick={() => setIsOpen((prev) => !prev)}
@@ -52,10 +116,10 @@ const Navbar = () => {
                     <li className='teksnav2' style={{ color: '#4B4B4B' }}>Blog</li>
                 </a>
                 <a href="/about">
-                    <li className='teksnav3' style={{ color: '#074288' }}>About Us</li>
+                    <li className='teksnav3' style={{ color: '#4B4B4B' }}>About Us</li>
                 </a>
-                <div style={{ marginTop: 20 }}>
-                    <a href='/login' className='buttonmasuk'>Masuk</a>
+                <div style={{ marginBottom: -30 }}>
+                    {menu}
                 </div>
             </ul>
             <div onClick={handleNav} className='block md:hidden '>
@@ -83,8 +147,8 @@ const Navbar = () => {
                         <div className="bg-[#FFFFFF]  absolute top-[220px] left-[-1px] flex flex-col items-start rounded-lg">
                             {list.map((item, i) => (
                                 <div className="w-full justify-between 
-                          p-4 hover:bg-blue-300 cursor-pointer rounded-lg text-[#074288]  
-                          border-l-transparent " key={i}>
+                           p-4 hover:bg-blue-300 cursor-pointer rounded-lg text-[#074288]  
+                           border-l-transparent " key={i}>
                                     <a href='webinar'><h3 className='font-bold'>{item.webinar}</h3></a>
                                     <a href='pelatihan'><h3 className='font-bold'>{item.pelatihan}</h3></a>
                                     <a href='layanan'><h3 className='font-bold'>{item.layanan}</h3></a>

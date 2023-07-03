@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
+import queryString from 'query-string';
 import { CgArrowTopRightO } from "react-icons/cg";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 const IconWebimar = () => {
-    const [activeSection, setActiveSection] = useState(0);
+    const params = queryString.parse(window.location.search);
+    const initialActiveSection = parseInt(params.section as string, 10) || 0;
+    const [activeSection, setActiveSection] = useState(initialActiveSection);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,11 +27,14 @@ const IconWebimar = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
+        const newQuery = queryString.stringify({ section: activeSection });
+        const newUrl = window.location.pathname + "?" + newQuery;
+        window.history.replaceState(null, "", newUrl);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [activeSection]);
 
     return (
         <>
@@ -167,10 +174,3 @@ const IconWebimar = () => {
 };
 
 export default IconWebimar;
-
-     // renderArrowNext={(onClickHandler) => (
-                        //     <BsArrowRight size={30} onClick={onClickHandler} className="absolute right-0 top-[50%] text-[#002157]" />
-                        // )}
-                        // renderArrowPrev={(onClickHandler) => (
-                        //     <BsArrowLeft size={30} onClick={onClickHandler} className="absolute left-0 top-[50%] text-[#002157]" />
-                        // )}

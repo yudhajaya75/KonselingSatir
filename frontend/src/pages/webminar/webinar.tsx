@@ -8,10 +8,10 @@ import Teks3 from '../../components/teks/teks-webminar2'
 import Footer from '../../components/footer/footwebminar'
 
 
-const webinar = () => {
+const Webinar = (props: { email: string }) => {
     return (
         <div className='mx-auto max-w-[1910px] relative'>
-            <Navbar />
+            <Navbar accountEmail={props.email} />
             <Banner />
             <Teks />
             <Teks2 />
@@ -22,4 +22,4 @@ const webinar = () => {
     )
 }
 
-export default webinar
+export default Webinar

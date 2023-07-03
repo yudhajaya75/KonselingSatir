@@ -2,10 +2,10 @@ import Navbar from "../../components/navbar/navbar"
 import Teks from "../../components/teks/tekspayment"
 import Payment from "../../components/payment/payment"
 
-function payment() {
+const payment = (props: { email: string }) => {
     return (
         <>
-            <Navbar />
+            <Navbar accountEmail={props.email} />
             <Teks />
             <Payment />
         </>

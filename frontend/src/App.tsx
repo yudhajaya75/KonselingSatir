@@ -46,19 +46,19 @@ function App() {
         <Route path='/login' Component={() => <Login setEmail={setEmail} />} />
         <Route path='/signup' element={<Daftar />} />
         <Route path='/home' element={<Home email={email} />} />
-        <Route path='/home2' element={<Home2 />} />
-        <Route path='/layanan' element={<Layanan />} />
-        <Route path='/webinar' element={<Webinar />} />
-        <Route path='/webinar2' element={<Webinar2 />} />
-        <Route path='/webinar3' element={<Webinar3 />} />
-        <Route path='/pelatihan' element={<Pelatihan />} />
-        <Route path='/pelatihan2' element={<Pelatihan2 />} />
-        <Route path='/konsultasi' element={<Konsultasi />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/blog2' element={<Blog2 />} />
-        <Route path='/blog3' element={<Blog3 />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/payment' element={<Payment />} />
+        <Route path='/home2' element={<Home2 email={email} />} />
+        <Route path='/layanan' element={<Layanan email={email} />} />
+        <Route path='/webinar' element={<Webinar email={email} />} />
+        <Route path='/webinar2' element={<Webinar2 email={email} />} />
+        <Route path='/webinar3' element={<Webinar3 email={email} />} />
+        <Route path='/pelatihan' element={<Pelatihan email={email} />} />
+        <Route path='/pelatihan2' element={<Pelatihan2 email={email} />} />
+        <Route path='/konsultasi' element={<Konsultasi email={email} />} />
+        <Route path='/blog' element={<Blog email={email} />} />
+        <Route path='/blog2' element={<Blog2 email={email} />} />
+        <Route path='/blog3' element={<Blog3 email={email} />} />
+        <Route path='/about' element={<About email={email} />} />
+        <Route path='/payment' element={<Payment email={email} />} />
       </Routes>
     </>
   );

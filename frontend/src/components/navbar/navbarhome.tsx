@@ -1,12 +1,29 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import list from "./list.json"
+import listprofile from "./listprofile.json"
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import './navbarhome.css'
 
 const Navbar = ({ accountEmail }: { accountEmail: string }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isOpenUp, setIsOpenUp] = useState(false);
+    const toggleMenu = () => {
+        setIsOpenUp((prev) => !prev);
+    };
+
+    const [nav, setNav] = useState(false)
+
+    const handleNav = () => {
+        setNav(!nav)
+    }
+
+    const profile = [
+        { myprofile: 'My Profile', logout: 'Log out' },
+    ];
+
     const logout = async () => {
         await fetch('http://localhost:8000/api/logout', {
             method: 'POST',
@@ -15,68 +32,48 @@ const Navbar = ({ accountEmail }: { accountEmail: string }) => {
         });
     }
 
-    let menu;
+    let menu: JSX.Element;
 
     if (accountEmail === '') {
         menu = (
             <div>
                 <div style={{ marginTop: 20 }}>
-                    <a href='/login' className='buttonmasuk'>Masuk</a>
+                    <a href="/login" className="buttonmasuk">
+                        Masuk
+                    </a>
                 </div>
             </div>
         );
     } else {
+
         menu = (
-            // <div>
-            //     {isOpen ? (
-            //     <AiOutlineCaretDown />
-            // ) : (
-            //     <AiOutlineCaretUp />
-            // )}
-            // {isOpen && (
-            //     <div className="bg-[#FFFFFF] absolute ml-12 top-20 flex flex-col items-start rounded-lg p-2">
-            //         {list.map((item, i) => (
-            //             <div className="w-[239px] justify-between text-[#074288] p-4 hover:bg-blue-300 cursor-pointer rounded-lg border-l-transparent hover:border-l-white" key={i}>
-            //                 <a href='webinar'><h3 className='font-bold'>{item.webinar}</h3></a>
-            //                 <a href='pelatihan'><h3 className='font-bold'>{item.pelatihan}</h3></a>
-            //                 <a href='layanan'><h3 className='font-bold'>{item.layanan}</h3></a>
-            //                 <a href='konsultasi'><h3 className='font-bold'>{item.konsultasi}</h3></a>
-            //             </div>
-            //         ))}
-            //     </div>
-            // )}
-            // </div>
-            <div className='relative inline-block text-left'>
-                {accountEmail ? (
-                    <div className='dropdown' style={{ marginTop: 10, marginLeft: 100 }}>
-                        <button
-                            className="btn btn-secondary dropdown-toggle"
-                            type="button"
-                            id="dropdownMenuButton"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false">
-                            {accountEmail}
-                        </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <Link className="dropdown-item" to="/login" onClick={logout}>My Profile</Link>
-                            <hr />
-                            <Link className="dropdown-item" to="/login" onClick={logout}>Keluar</Link>
-                        </div>
+            <div className="relative inline-block text-left">
+                <a
+                    href="#"
+                    onClick={toggleMenu}
+                    className="teksnav1"
+                    style={{ color: '#4B4B4B', fontWeight: 'bold', fontSize: '20px' }}
+                >
+                    {/* <img src="./images/profile.png" alt="" /> */}
+                    <li>{accountEmail}</li>
+                    <li style={{ marginLeft: 10 }}>{isOpenUp ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}</li>
+                </a>
+                {isOpenUp && (
+                    <div className="bg-[#FFFFFF] absolute ml-12 top-20 flex flex-col items-start rounded-lg p-2">
+                        {listprofile.map((item, i) => (
+                            <div className="w-[239px] justify-between text-[#074288] p-4 
+                            hover:bg-blue-300 cursor-pointer rounded-lg border-l-transparent 
+                            hover:border-l-white"
+                                key={i}
+                            >
+                                <Link to='/myprofile'><h3 className='font-bold'>{item.myprofile}</h3></Link>
+                                <Link to='/login' onClick={logout}><h3 className='font-bold'>{item.logout}</h3></Link>
+                            </div>
+                        ))}
                     </div>
-                ) : null}
+                )}
             </div>
         );
-    }
-
-
-
-
-    const [isOpen, setIsOpen] = useState(false)
-    const [nav, setNav] = useState(false)
-
-    const handleNav = () => {
-        setNav(!nav)
     }
 
     return (

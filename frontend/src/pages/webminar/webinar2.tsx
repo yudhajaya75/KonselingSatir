@@ -9,10 +9,10 @@ import Sosmed from '../../components/sosmed/sosmed'
 import Footer from '../../components/footer/footwebminar'
 
 
-const webminar = () => {
+const webinar = (props: { email: string }) => {
     return (
         <div className='mx-auto max-w-[1910px] relative'>
-            <Navbar />
+            <Navbar accountEmail={props.email} />
             <Teks4 />
             <Banner />
             <Teks />
@@ -24,4 +24,4 @@ const webminar = () => {
     )
 }
 
-export default webminar
+export default webinar

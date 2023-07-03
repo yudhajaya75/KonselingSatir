@@ -10,10 +10,10 @@ import Compslid1 from '../../components/compslid/compslid1';
 import Footer from '../../components/footer/footer';
 
 
-function konsultasi() {
+const konsultasi = (props: { email: string }) => {
   return (
     <div className='mx-auto max-w-[1910px] relative'>
-      <Navbar />
+      <Navbar accountEmail={props.email} />
       <Banner />
       <Teks />
       <Card />

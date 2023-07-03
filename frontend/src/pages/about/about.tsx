@@ -9,10 +9,10 @@ import Founding from '../../components/founding/founding'
 import Footer from '../../components/footer/footabout'
 
 
-const about = () => {
+const About = (props: { email: string }) => {
     return (
         <div className='mx-auto max-w-[1910px] relative'>
-            <Navbar />
+            <Navbar accountEmail={props.email} />
             <Banner />
             <Teks />
             <Teks1 />
@@ -25,4 +25,4 @@ const about = () => {
     )
 }
 
-export default about
+export default About
