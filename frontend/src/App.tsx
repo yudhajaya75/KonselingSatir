@@ -42,6 +42,7 @@ function App() {
   return (
     <>
       <Routes>
+        {/* <Route path='/' element={<Home email={email} />} /> */}
         <Route path='/' element={<Home email={email} />} />
         <Route path='/login' Component={() => <Login setEmail={setEmail} />} />
         <Route path='/signup' element={<Daftar />} />
